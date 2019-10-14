@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 17:07:32 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/10/12 23:02:14 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/10/13 14:07:27 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	*freestrjoin(char *s1, char *s2)
 	return (tmpstr);
 }
 
-void	findfliubdi(char **line, char **cnt, char *tmpstr, size_t rdbl)
+void	couldntfit(char **line, char **cnt, char *tmpstr, size_t rdbl)
 {
 	if (ft_strchr(tmpstr, '\0'))
 		cpytillbr(line, cnt, '\n');
@@ -100,6 +100,6 @@ int		get_next_line(const int fd, char **line)
 	rdbl = 0;
 	while (tmpstr[rdbl] != '\n' && tmpstr[rdbl])
 		rdbl++;
-	findfliubdi(line, (char **)&curr->content, tmpstr, rdbl);
+	couldntfit(line, (char **)&curr->content, tmpstr, rdbl);
 	return (1);
 }
